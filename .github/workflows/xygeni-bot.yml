@@ -4,9 +4,7 @@ name: Xygeni Bot
 on:
   workflow_dispatch:  # Allows manual triggering
   # no push triggers
-  pull_request:
-    branches:
-      - main
+  # no pull request triggers
   # no schedule triggers
 
 permissions:
