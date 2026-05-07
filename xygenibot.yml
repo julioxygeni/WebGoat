@@ -55,10 +55,6 @@ sast:
 
   # Languages of vulnerabilities to remediate
   languages:
-    - 'java'
-    - 'javascript'
-    - 'php'
-    - 'python'
 
   # severities of vulnerabilities to remediate
   severities:
@@ -100,7 +96,7 @@ sast:
     groq:
       host: ${GROQ_HOST:-https://api.groq.com/openai/v1}
       token: ${GROQ_TOKEN}
-      model: ${GROQ_MODEL:-gemma2-9b-it}
+      model: ${GROQ_MODEL:-llama-3.1-8b-instant}
 
     openai:
       host: ${OPENAI_HOST:-https://api.openai.com/v1}
@@ -114,4 +110,12 @@ sast:
 
   # This property sets the AI agent to be used. One of the available within ai-agents.
   # Use global to use the integration configured into your account if any; Else it defaults to xygeni
-  ai-remediation-agent: global
+  ai-remediation-agent: ${AI_REMEDIATION_AGENT:-global}
+
+# If true (default), add a footer attribution at the end of generated pull request descriptions.
+# Set to false to disable attribution.
+pull-request-attribution-enabled: true
+
+# If true, self-signed certificates are allowed in the target on-premises SCM system.
+# Use with caution !
+allowSelfSignedCertificates: false
